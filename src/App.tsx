@@ -13,10 +13,13 @@ const App: React.FC = () => {
     formData.append("image", image);
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/detect_qr_codes", {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        "https://qr-detection-app-backend.adaptable.app/detect_qr_codes",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       if (response.ok) {
         const imageBlob = await response.blob();
