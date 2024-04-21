@@ -1,11 +1,12 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
+import { FiAlertCircle } from "react-icons/fi";
 import ImageUploader from "./components/ImageUploader";
+import { Container, Typography, Card, CardContent, Box } from "@mui/material";
 import "./App.css";
 
 const App: React.FC = () => {
   const [imageUrl, setImageUrl] = useState<string | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
 
   const handleImageUpload = async (image: File) => {
     const formData = new FormData();
@@ -32,16 +33,36 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="app-container">
-      <h1 className="app-title">QR Code Detector</h1>
-      <ImageUploader onImageUpload={handleImageUpload} />
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
-      {imageUrl && (
-        <div className="image-container">
-          <img src={imageUrl} alt="Uploaded" className="uploaded-image" />
-        </div>
-      )}
-    </div>
+    <Container className="app-container">
+      <Card>
+        <CardContent>
+          <Typography variant="h3" align="center" gutterBottom>
+            QR Code Detector
+          </Typography>
+          <Typography variant="body1" align="center" gutterBottom>
+            Upload an image and let us detect QR codes for you!
+          </Typography>
+          <ImageUploader onImageUpload={handleImageUpload} />
+          {errorMessage && (
+            <Box
+              mt={2}
+              color="error.main"
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+            >
+              <FiAlertCircle className="error-icon" />
+              {errorMessage}
+            </Box>
+          )}
+          {imageUrl && (
+            <Box mt={4} display="flex" justifyContent="center">
+              <img src={imageUrl} alt="Uploaded" className="uploaded-image" />
+            </Box>
+          )}
+        </CardContent>
+      </Card>
+    </Container>
   );
 };
 
