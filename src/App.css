@@ -3,16 +3,8 @@ body {
   background-color: #f0f0f0;
 }
 
-.header {
-  background-color: #4caf50;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  font-size: 24px;
-}
-
 .app-card {
-  background-color: white;
+  background-color: #333;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -31,21 +23,8 @@ body {
   height: 100vh;
 }
 
-.icon {
-  margin-left: 10px;
-}
-
 .error-icon {
   margin-right: 5px;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 .uploaded-image {
