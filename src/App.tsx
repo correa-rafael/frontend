@@ -47,7 +47,7 @@ const App: React.FC = () => {
           QR Code Detector
         </Typography>
         <Typography variant="body1" align="center" gutterBottom style={{ marginBottom: "20px", fontSize: "20px", color: "#333" }}>
-          Upload an image and let us detect QR codes for you!
+          Upload an image and let the Transformer-based Artificial Intelligence detect QR codes for you!
         </Typography>
       </Box>
       <Card className="app-card">
