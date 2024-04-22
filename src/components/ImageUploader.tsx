@@ -18,9 +18,6 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onImageUpload }) => {
 
   return (
     <div className="image-uploader-container">
-      <label className="input-label" htmlFor="upload-input">
-        Choose an image:
-      </label>
       <input
         id="upload-input"
         className="upload-input"
