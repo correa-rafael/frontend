@@ -17,11 +17,24 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onImageUpload }) => {
   };
 
   return (
-    <div>
-      <input type="file" accept="image/*" onChange={handleFileChange} />
+    <div className="image-uploader-container">
+      <label className="input-label" htmlFor="upload-input">
+        Choose an image:
+      </label>
+      <input
+        id="upload-input"
+        className="upload-input"
+        type="file"
+        accept="image/*"
+        onChange={handleFileChange}
+      />
+      <button className="upload-button" onClick={() => document.getElementById("upload-input")?.click()}>
+        Upload
+      </button>
       {error && <p style={{ color: "red" }}>{error}</p>}
     </div>
   );
 };
+
 
 export default ImageUploader;
