@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 import { FiAlertCircle } from "react-icons/fi";
 import ImageUploader from "./components/ImageUploader";
-import { Container, Typography, Card, CardContent, Box } from "@mui/material";
+import { Container, Typography, Card, CardContent, Box, CircularProgress } from "@mui/material";
 import "./App.css";
 
 const App: React.FC = () => {
   const [imageUrl, setImageUrl] = useState<string | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const handleImageUpload = async (image: File) => {
+    setLoading(true);
+
     const formData = new FormData();
     formData.append("image", image);
 
@@ -32,20 +35,25 @@ const App: React.FC = () => {
     } catch (error) {
       console.error("Error uploading image:", error);
       setErrorMessage("An error occurred while processing the image.");
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <Container className="app-container">
-      <Card>
+    <Container>
+      <Box my={4}>
+        <Typography variant="h3" align="center" gutterBottom style={{ color: "#3f51b5", fontFamily: "Arial, sans-serif" }}>
+          QR Code Detector
+        </Typography>
+      </Box>
+      <Card className="app-card">
         <CardContent>
-          <Typography variant="h3" align="center" gutterBottom>
-            QR Code Detector
-          </Typography>
-          <Typography variant="body1" align="center" gutterBottom>
+          <Typography variant="body1" align="center" gutterBottom style={{ marginBottom: "20px" }}>
             Upload an image and let us detect QR codes for you!
           </Typography>
           <ImageUploader onImageUpload={handleImageUpload} />
+          {loading && <CircularProgress style={{ margin: "20px auto", display: "block" }} />}
           {errorMessage && (
             <Box
               mt={2}
