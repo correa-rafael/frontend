@@ -24,3 +24,32 @@
 .uploaded-image:hover {
   transform: scale(1.05);
 }
+
+.image-uploader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.input-label {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.upload-input {
+  display: none;
+}
+
+.upload-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.upload-button:hover {
+  background-color: #45a049;
+}
