@@ -43,14 +43,17 @@ const App: React.FC = () => {
   return (
     <Container>
       <Box my={4}>
-        <Typography variant="h3" align="center" gutterBottom style={{ color: "#3f51b5", fontFamily: "Arial, sans-serif" }}>
+        <Typography variant="h3" align="center" gutterBottom style={{ color: "#fff", fontFamily: "Roboto, Arial, sans-serif", background: "linear-gradient(to right, #3f51b5, #4caf50)", padding: "20px", borderRadius: "10px" }}>
           QR Code Detector
+        </Typography>
+        <Typography variant="body1" align="center" gutterBottom style={{ marginBottom: "20px", fontSize: "20px", color: "#333" }}>
+          Upload an image and let us detect QR codes for you!
         </Typography>
       </Box>
       <Card className="app-card">
         <CardContent>
-          <Typography variant="body1" align="center" gutterBottom style={{ marginBottom: "20px" }}>
-            Upload an image and let us detect QR codes for you!
+          <Typography variant="body1" align="center" gutterBottom style={{ color: "#000", fontSize: "18px", marginBottom: "20px", fontWeight: "bold" }}>
+            Choose an image:
           </Typography>
           <ImageUploader onImageUpload={handleImageUpload} />
           {loading && <CircularProgress style={{ margin: "20px auto", display: "block" }} />}
@@ -75,6 +78,6 @@ const App: React.FC = () => {
       </Card>
     </Container>
   );
-};
+}
 
 export default App;
