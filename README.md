@@ -24,7 +24,7 @@ The QR Code Detector App is a web application that enables users to upload image
 
 The frontend of QR Code Detector App is deployed on [Vercel](https://qr-detection-app.vercel.app/). The backend is deployed on a separate server implemented in the [qr-detection-app-backend](https://github.com/correa-rafael/qr-detection-app-backend) repository.
 
-Both the frontend and backend components work together to provide a seamless user experience, with the frontend handling user interactions and the backend performing image processing and QR code detection tasks.
+Both the frontend and backend components work together to provide a seamless user experience, with the frontend handling user interactions and the backend performing the heavy lifting of image processing and AI-based QR code detection. 
 
 ## Installation
 
