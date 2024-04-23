@@ -1,6 +1,6 @@
 # QR Code Detector App
 
-The QR Code Detector App is a web application that enables users to upload images and detect QR codes within them. It utilizes [RT-DETR](https://github.com/lyuwenyu/RT-DETR), a Transformer-based AI model for real-time object detection, to accurately identify QR codes.
+The QR Code Detector App is a web application that enables users to upload images and detect QR codes within them. It utilizes [RT-DETR](https://github.com/lyuwenyu/RT-DETR), a Transformer-based AI model for real-time object detection, fine-tuned to accurately identify QR codes.
 
 ## Features
 
