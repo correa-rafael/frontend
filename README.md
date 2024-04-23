@@ -35,7 +35,7 @@ To run the QR Code Detector App locally, follow these steps:
 3. Install dependencies using `npm install`.
 4. Start the development server using `npm start`.
 
-## Usage
+## Local Usage
 
 To use the QR Code Detector App, follow these steps:
 
